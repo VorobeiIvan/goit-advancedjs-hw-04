@@ -1,25 +1,94 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-@import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
 
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+.container {
+    width: 100%;
+    height: 60px;
+    background-color: #3D59B1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.search-input {
+    margin: 0;
+    min-width: 200px;
+    padding: 8px 16px;
+    border-radius: 8px 0 0 8px;
+    border: none;
+    background-color: aliceblue;
+}
+
+.search-btn {
+    border: none;
+    background-color: aliceblue;
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+}
+
+.search-btn svg {
+    fill: none;
+    stroke: grey;
+}
+
+.search-btn svg:hover,
+.search-btn svg:focus {
+    cursor: pointer;
+    stroke: #3D59B1;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.photo-card {
+    margin: 10px;
+    width: 320px;
+}
+
+.photo-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.info {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
+}
+
+.info-item {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.load-more {
+    display: none;
+    background: none;
+    border: none;
+    color: grey;
+    cursor: pointer;
+}
+
+.load-more:hover,
+.load-more:focus {
+    color: #3D59B1;
 }
