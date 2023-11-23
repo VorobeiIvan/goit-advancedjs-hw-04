@@ -1,34 +1,35 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .container {
     width: 100%;
     height: 60px;
     background-color: #3D59B1;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.search-form {
+  }
+  
+  .search-form {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.search-input {
-    margin: 0;
+  }
+  
+  .search-input {
     min-width: 200px;
     padding: 8px 16px;
     border-radius: 8px 0 0 8px;
     border: none;
     background-color: aliceblue;
-}
-
-.search-btn {
+  }
+  
+  .search-btn {
     border: none;
     background-color: aliceblue;
     border-radius: 0 8px 8px 0;
@@ -36,59 +37,68 @@ body {
     align-items: center;
     justify-content: center;
     padding: 4px;
-}
-
-.search-btn svg {
+    cursor: pointer;
+  }
+  
+  .search-btn svg {
     fill: none;
     stroke: grey;
-}
-
-.search-btn svg:hover,
-.search-btn svg:focus {
-    cursor: pointer;
+  }
+  
+  .search-btn svg:hover,
+  .search-btn svg:focus {
     stroke: #3D59B1;
-}
-
-.gallery {
+  }
+  
+  .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 20px;
-}
-
-.photo-card {
+    margin: 20px;
+  }
+  
+  .photo-card {
     margin: 10px;
-    width: 320px;
-}
-
-.photo-card img {
-    width: 100%;
+    width: 300px;
     border-radius: 8px;
-}
-
-.info {
-    font-size: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .photo-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .info {
+    font-size: 14px;
     display: flex;
     justify-content: space-between;
     background-color: #f0f0f0;
     padding: 10px;
     border-radius: 0 0 8px 8px;
-}
-
-.info-item {
+  }
+  
+  .info-item {
     text-align: center;
     margin: 5px 0;
-}
-
-.load-more {
+  }
+  
+  .load-more {
+    margin: 24px;
+    padding: 8px 16px;
     display: none;
     background: none;
-    border: none;
-    color: grey;
-    cursor: pointer;
-}
-
-.load-more:hover,
-.load-more:focus {
+    border: solid 1px #3D59B1;
+    border-radius: 4px;
     color: #3D59B1;
-}
+    cursor: pointer;
+  }
+  
+  .load-more:hover,
+  .load-more:focus {
+    color: #fff;
+    background-color: #3D59B1;
+  }
+  
