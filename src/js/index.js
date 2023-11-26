@@ -17,7 +17,7 @@ let currentPage = 1;
 
 el.searchForm.addEventListener('submit', async event => {
   event.preventDefault();
-
+  currentPage = 1;
   searchQuery = el.searchQueryInput.value.trim();
   if (!searchQuery) {
     Notiflix.Report.failure('Please enter a request', 'OK');
@@ -69,11 +69,12 @@ el.loadMoreBtn.addEventListener('click', async event => {
   } catch (error) {
     console.error('Load more error:', error);
   }
+  lightbox.refresh();
 });
 
 function displayImages(hits) {
   el.gallery.innerHTML = createMarkup(hits);
-  initializeLightbox();
+  lightbox.refresh();
 }
 function checkingTheNumberOfCards(hits) {
   if (hits.length >= 40) {
@@ -88,6 +89,10 @@ function checkingTheNumberOfCards(hits) {
   }
 }
 function displayNoResultsMessage() {
+  el.searchQueryInput.value = '';
+  el.gallery.innerHTML = '';
+  el.loadMoreBtn.style.display = 'none';
+
   Notiflix.Report.failure(
     'No results found',
     'Please try another search',
@@ -127,14 +132,4 @@ function createMarkup(galleryItems) {
       }
     )
     .join('');
-}
-
-function initializeLightbox() {
-  if (lightbox && lightbox.destroy) {
-    lightbox.destroy();
-  }
-
-  lightbox = new SimpleLightbox('.gallery-link', {
-    captions: true,
-  });
 }
